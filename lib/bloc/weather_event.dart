@@ -5,6 +5,8 @@ abstract class WeatherEvent extends Equatable {
 }
 
 class Weatherreq extends WeatherEvent {
+  // Event are the requests -----> making data fecthing request
+  // Use equitable for better Management 
   final String uri;
   final String key;
   final String location;

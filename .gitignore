@@ -33,6 +33,9 @@ migrate_working_dir/
 .pub/
 /build/
 
+# Api file
+/lib/canst/constData.dart 
+
 # Symbolication related
 app.*.symbols
 

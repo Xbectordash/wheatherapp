@@ -7,10 +7,13 @@ import 'package:wheatherapp/repo/repo.dart';
 import 'package:wheatherapp/screen/whetherLanding.dart';
 
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
+  // Creating bloc to control data and state
   WeatherBloc() : super(WeatherInitiate()) {
     on<Weatherreq>((event, emit) async {
+      //  Calling and loading WeatherLoading() State
       emit(WeatherLoading());
       try {
+        // Fethcing data from repo
         ResponseData resData = await Repo().fetch(
           event.uri,
           event.key,
@@ -19,6 +22,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
         debugPrint("data is in bloc: ${resData.toString()}");
         emit(WeatherLoaded(resData: resData));
       } catch (e) {
+        // checking errors
         debugPrint("this is in bloc ctach : ${e.toString()}");
         emit(WeatherError(errorMsg: e.toString()));
       }

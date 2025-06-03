@@ -3,6 +3,8 @@ import 'package:wheatherapp/model/responseModel.dart';
 
 abstract class WeatherState extends Equatable {}
 
+// creating States for ui on different responses
+
 class WeatherInitiate extends WeatherState {
   @override
   // TODO: implement props
