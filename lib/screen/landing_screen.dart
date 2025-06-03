@@ -3,9 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wheatherapp/bloc/weather_bloc.dart';
 import 'package:wheatherapp/bloc/weather_event.dart';
 import 'package:wheatherapp/bloc/weather_state.dart';
-import 'package:wheatherapp/canst/constData.dart';
-import 'package:wheatherapp/repo/repo.dart';
-import 'package:wheatherapp/screen/show_weather.dart';
+import 'package:wheatherapp/const/constdata.dart';
+import 'package:wheatherapp/screen/card_weather_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Whetherlanding extends StatefulWidget {
@@ -56,8 +55,8 @@ class _WhetherlandingState extends State<Whetherlanding> {
                     end: Alignment.bottomRight,
                     colors: [
                       Color(0xFFFFFFFF), // pure white
-                      Color(0xFFF2F2F2), // very light grey
-                      Color(0xFFE6E6E6), // soft silver
+                      Color.fromARGB(255, 246, 245, 245), // very light grey
+                      Color.fromARGB(255, 239, 238, 238), // soft silver
                     ],
                   ),
                   borderRadius: BorderRadius.circular(8),

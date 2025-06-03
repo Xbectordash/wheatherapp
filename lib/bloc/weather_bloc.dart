@@ -2,9 +2,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wheatherapp/bloc/weather_event.dart';
 import 'package:wheatherapp/bloc/weather_state.dart';
-import 'package:wheatherapp/model/responseModel.dart';
+import 'package:wheatherapp/model/weather_data_model.dart';
 import 'package:wheatherapp/repo/repo.dart';
-import 'package:wheatherapp/screen/whetherLanding.dart';
+import 'package:wheatherapp/screen/landing_screen.dart';
 
 class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   // Creating bloc to control data and state
@@ -14,7 +14,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
       emit(WeatherLoading());
       try {
         // Fethcing data from repo
-        ResponseData resData = await Repo().fetch(
+        WeatherData resData = await Repo().fetch(
           event.uri,
           event.key,
           event.location,

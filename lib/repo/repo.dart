@@ -2,11 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
-import 'package:wheatherapp/canst/constData.dart';
-import 'package:wheatherapp/model/responseModel.dart';
+import 'package:wheatherapp/model/weather_data_model.dart';
 
 class Repo {
-  Future<ResponseData> fetch(String uri, String key, String location) async {
+  Future<WeatherData> fetch(String uri, String key, String location) async {
     final path = '/v1/current.json';
     final queryParameters = {'key': key, 'q': location};
 
@@ -19,10 +18,10 @@ class Repo {
       // var current = resBody["current"];
       // // var location = resBody["location"];
       debugPrint("done resBody: ${resBody.toString()}");
-      return ResponseData.fromJson(resBody);
+      return WeatherData.fromJson(resBody);
     } else {
       debugPrint("error on fethich9ng");
-      return ResponseData();
+      return WeatherData();
     }
   }
 }

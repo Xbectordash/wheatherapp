@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:wheatherapp/model/responseModel.dart';
+import 'package:wheatherapp/model/weather_data_model.dart';
 
 abstract class WeatherState extends Equatable {}
 
@@ -18,7 +18,7 @@ class WeatherLoading extends WeatherState {
 }
 
 class WeatherLoaded extends WeatherState {
-  ResponseData? resData;
+  WeatherData? resData;
   WeatherLoaded({required this.resData});
   @override
   // TODO: implement props

@@ -1,12 +1,12 @@
 import 'package:flutter/rendering.dart';
 
-class ResponseData {
+class WeatherData {
   Location? location;
   Current? current;
 
-  ResponseData({this.location, this.current});
+  WeatherData({this.location, this.current});
 
-  ResponseData.fromJson(Map<String, dynamic> json) {
+  WeatherData.fromJson(Map<String, dynamic> json) {
     debugPrint("In respose.fromJson");
     location = json['location'] != null
         ? new Location.fromJson(json['location'])
