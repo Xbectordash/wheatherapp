@@ -34,7 +34,7 @@ migrate_working_dir/
 /build/
 
 # Api file
-/lib/canst/constData.dart 
+/lib/const/constdata.dart 
 
 # Symbolication related
 app.*.symbols
